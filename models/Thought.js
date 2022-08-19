@@ -2,6 +2,7 @@ const { Schema, model } = require('mongoose');
 
 const thoughtsSchema = new Schema(
     {
+        // should there not be a thoughtID bit here? 
         thoughtText: {
             type: String,
             required: true,

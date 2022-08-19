@@ -5,7 +5,8 @@
     "seed": "^0.4.4"
   },
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "seed": "node utils/seed.js"
   },
   "name": "socialmediaapi",
   "description": "creating a social media API w/ Mongoose",

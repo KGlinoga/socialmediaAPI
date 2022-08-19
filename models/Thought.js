@@ -23,9 +23,9 @@ const thoughtsSchema = new Schema(
 );
 
 // virtual to leave commented until we add routes
-// thoughtsSchema.virtual('reactionCount').get(function () {
-//     return this.reactions.length;
-// });
+thoughtsSchema.virtual('reactionCount').get(function () {
+    return this.reactions.length;
+});
 
 // initialize Thoughts model
 const Thoughts = model('thoughts', thoughtsSchema);

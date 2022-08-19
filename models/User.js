@@ -27,9 +27,9 @@ const userSchema = new Schema (
     });
 
     // uncomment when you add routes
-// userSchema.virtual('friendCount').get(function(){
-//     return this.friends.length;
-// });
+userSchema.virtual('friendCount').get(function(){
+    return this.friends.length;
+});
 
 const User = model('user', userSchema);
 

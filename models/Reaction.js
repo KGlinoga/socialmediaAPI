@@ -24,6 +24,6 @@ const reactionSchema = new Schema({
 
 // not a model, but the reaction field's subdoc schema in the Thought model
 
-const Reactions = model('reaction', reactionSchema);
+// const Reactions = model('reactions', reactionSchema);
 
 module.exports = Reactions;

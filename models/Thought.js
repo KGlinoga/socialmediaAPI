@@ -1,6 +1,6 @@
-const { Schema, model } = require('mongoose');
+const { Schema, model, mongoose } = require('mongoose');
 
-const thoughtsSchema = new Schema(
+const thoughtSchema = new Schema(
     {
         // should there not be a thoughtID bit here? 
         thoughtText: {
@@ -23,11 +23,11 @@ const thoughtsSchema = new Schema(
 );
 
 // virtual to leave commented until we add routes
-thoughtsSchema.virtual('reactionCount').get(function () {
+thoughtSchema.virtual('reactionCount').get(function () {
     return this.reactions.length;
 });
 
 // initialize Thoughts model
-const Thoughts = model('thoughts', thoughtsSchema);
+const Thought = model('thoughts', thoughtSchema);
 
-module.exports = Thoughts;
+module.exports = Thought;

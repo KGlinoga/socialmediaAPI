@@ -17,7 +17,7 @@ module.exports = {
         User.findOne({ _id: req.params.userId })
             .then((user) =>
                 !user
-                    ? res.status(404).json({ message: 'No post with that ID' })
+                    ? res.status(404).json({ message: 'No User with that ID' })
                     : res.json(post)
             )
             .catch((err) => res.status(500).json(err));

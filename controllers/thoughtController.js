@@ -9,10 +9,10 @@ module.exports = {
     // single thought
     getSingleThought(req,res) {
         Thought.findOne({ _id: req.params.thoughtId })
-            .then((comment) => 
-            !comment
+            .then((thought) => 
+            !thought
                 ? res.status(404).json({ message: 'No Thought found with that id'})
-                : res.json(comment)
+                : res.json(thought)
         )
         .catch((err) => res.status(500).json(err));
     },
@@ -21,8 +21,8 @@ module.exports = {
         Thought.create(req.body)
             .then((thought) => {
                 return User.findOneAndUpdate(
-                    { _id: req.body.postId },
-                    { $push: { thought: comment._id} },
+                    { _id: req.body.userId },
+                    { $push: { thoughts: thought._id} },
                     { new: true}
                 );
             })

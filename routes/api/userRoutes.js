@@ -13,14 +13,14 @@ const {
 //  /api/users 
 router.route('/').get(getAllUsers);
 
-// .post(createUser);
+router.route('/').post(createUser);
 
 // get single users
 //  url: port/api/users/:userID 
 router.route('/:userId').get(getSingleUser);
 
 // put/edit/update a single user
-// ur: port/api/users/:userID 
+// url: port/api/users/:userID 
 router.route('/:userId').put(updateUser).delete(deleteUser);
 // BONUS: remove a user's associated thoughts when deleted
 

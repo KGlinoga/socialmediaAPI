@@ -4,6 +4,8 @@
 
   This assigment was meant to show proficiency in Express.js and MongoDB and Mongoose.  It is the back end of a social media app that includes Users, their entered "Thoughts" and "reactions" to those thoughts. There is also a friends count.
 
+Please find a video demo of this app in Insomnia here: [https://drive.google.com/file/d/15Qv0FWrCSUpjVaQeLee5UCByInN96sXW/view?usp=sharing]()
+
 ## Table of Contents
 
 1. [Installation](#installation)

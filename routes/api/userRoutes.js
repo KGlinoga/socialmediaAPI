@@ -21,7 +21,9 @@ router.route('/:userId').get(getSingleUser);
 
 // put/edit/update a single user
 // url: port/api/users/:userID 
-router.route('/:userId').put(updateUser).delete(deleteUser);
+router.route('/:userId').put(updateUser);
+
+router.route('/:userId').delete(deleteUser);
 // BONUS: remove a user's associated thoughts when deleted
 
 // adding a friend, deleting a friend by userID and friendID (which I think is the other userID?)

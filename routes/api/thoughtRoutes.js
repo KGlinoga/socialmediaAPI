@@ -14,13 +14,13 @@ const {
 router.route('/').get(getAllThoughts);
 
 // get single thought by _id - wait, should there be an id field in the thoughts schema tho?? 
-// url: port/api/thoughts/:_id
-router.route('/:thoughtId').get(getSingleThought);
+// url: port/api/users/:userID/thoughts/:_id
+router.route('/users/:userID/thoughts').get(getSingleThought);
 
 // create new thought - um, SUPER unsure here. Like, what is the path supposed to be and still wondering a bout a thoughtId??
 // must also push created thought's _id to the associated user's thoughts array field***
 // url: port/api/thoughts
-router.route('/:thoughtId').post(createThought);
+router.route('/thoughts/:userID').post(createThought);
 
 // update/delete a thought by its _id
 // url: port/api/thoughts/:_id

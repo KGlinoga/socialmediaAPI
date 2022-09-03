@@ -20,8 +20,7 @@ router.route('/:thoughtId').get(getSingleThought);
 
 // update/delete a thought by its _id
 // url: port/api/thoughts/:_id
-router.route('/:thoughtId').put(updateThought);
-    // .delete(deleteThought);
+router.route('/:thoughtId').put(updateThought).delete(deleteThought);
 
 // add a reaction to a thought
 // url: port/api/thoughts/:thoughtID/reactions

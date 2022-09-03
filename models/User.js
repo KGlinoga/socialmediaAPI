@@ -12,7 +12,7 @@ const userSchema = new mongoose.Schema (
             type: String,
             required: true,
             unique: true,
-            // must match a valid email address
+            match: [/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/, 'Please provide a valid email address']
         },
         thoughts: [
             // an array of _id values referencing the Thought model

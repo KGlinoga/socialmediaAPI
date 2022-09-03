@@ -15,7 +15,7 @@ router.route('/').get(getAllThoughts).post(createThought);
 
 // get single thought by _id - wait, should there be an id field in the thoughts schema tho?? 
 // url: port/api/users/:userID/thoughts/:_id
-router.route('/users/:userID/thoughts').get(getSingleThought);
+router.route('/:thoughtId').get(getSingleThought);
 
 // create new thought - um, SUPER unsure here. Like, what is the path supposed to be and still wondering a bout a thoughtId??
 // must also push created thought's _id to the associated user's thoughts array field***

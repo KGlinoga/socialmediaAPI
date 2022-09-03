@@ -16,8 +16,7 @@ const userSchema = new mongoose.Schema (
         },
         thoughts: [
             // an array of _id values referencing the Thought model
-            { type: Schema.Types.ObjectId, ref: 'Thoughts'}
-            // thoughtsSchema
+            { type: Schema.Types.ObjectId, ref: 'thoughts'}
         ],
         friends: [
             // array of _id values refencing the User model (self-reference)
@@ -25,11 +24,17 @@ const userSchema = new mongoose.Schema (
                 type: Schema.Types.ObjectId,
                 ref: 'user'
             }
-            // userSchema
+    
         ]
+    },
+    {
+        toJSON: {
+            virtuals: true,
+        },
+        id: false
     });
 
-    // uncomment when you add routes
+    // uncomment when you add routes - this counts the friends!
 userSchema.virtual('friendCount').get(function(){
     return this.friends.length;
 });

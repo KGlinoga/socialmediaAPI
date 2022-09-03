@@ -3,7 +3,7 @@ const { User, Thought } = require('../models');
 module.exports = {
     getAllThoughts(req,res) {
         Thought.find()
-            .then((comment) => res.json(comment))
+            .then((thoughts) => res.json(thoughts))
             .catch((err) => res.status(500).json(err));
     },
     // single thought

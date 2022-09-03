@@ -21,7 +21,10 @@ const userSchema = new mongoose.Schema (
         ],
         friends: [
             // array of _id values refencing the User model (self-reference)
-            { type: Schema.Types.ObjectId, ref: 'user'}
+            {
+                type: Schema.Types.ObjectId,
+                ref: 'user'
+            }
             // userSchema
         ]
     });

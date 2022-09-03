@@ -2,14 +2,15 @@ const { Schema, model, mongoose } = require('mongoose');
 
 const thoughtSchema = new Schema(
     {
-        // should there not be a thoughtID bit here? 
+    
         thoughtText: {
             type: String,
             required: true,
-            // somehow limit length to 280 chars
+            minlength: 1,
+            maxlength: 280
         }, 
         createdAt: {
-            type: Date, default: Date.now 
+            type: Date, default: new Date 
         },
         username: {
             type: String,
@@ -17,8 +18,14 @@ const thoughtSchema = new Schema(
         },
         reactions: [
             // references reactionSchema
-            { type: Schema.Types.ObjectId, ref: 'Reactions' }
+            reactionSchema
         ]
+    }, 
+    {
+        toJSON: {
+            virtuals: true
+        },
+        id: false
     }
 );
 

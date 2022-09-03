@@ -38,4 +38,30 @@ module.exports = {
                 console.error(err);
             });
     },
+
+
+// update thought by id
+updateThought(req, res) {
+    Thought.findOneAndUpdate(
+        { _id: req.params.thoughtId },
+        { $set: req.body },
+        { runValidators: true, new: true }
+    )
+        .then((thought) => 
+            !thought
+                ? res.status(404).json({ msg: 'No course with this ID!' })
+                : res.json(thought)
+        )
+        .then((user) =>
+            !user
+                ? res
+                    .status(404)
+                    .json({ message: 'thought created, but no users with this ID!' })
+                :
+                res.json({ message: 'Thought created!' })
+        )
+        .catch((err) => {
+            console.error(err);
+        });
+},
 };
